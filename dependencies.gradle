@@ -1,0 +1,60 @@
+dependencyManagement {
+    dependencies {
+
+        // Framework
+        dependencySet(group: 'org.springframework.boot', version: "${springBootVersion}") {
+            //entry 'spring-boot-starter-web'
+            entry 'spring-boot-starter-cache'
+            entry 'spring-boot-starter-test'
+        }
+
+        // Persistence
+        dependency("javax.persistence:javax.persistence-api:${javaxPersistenceApiVersion}")
+        dependency("javax.annotation:javax.annotation-api:${javaxAnnotationApiVersion}")
+        dependencySet(group: 'org.springframework.data', version: "${springDataJPAVersion}") {
+            entry 'spring-data-commons'
+            entry 'spring-data-jpa'
+        }
+        dependencySet(group: 'com.querydsl', version: "${querydslVersion}") {
+            entry 'querydsl-jpa'
+            entry 'querydsl-core'
+            entry 'querydsl-apt'
+            entry 'querydsl-sql'
+        }
+        dependency("org.postgresql:postgresql:${postgresqlVersion}")
+
+        // Pojo
+        dependency("org.projectlombok:lombok:${lombokVersion}")
+
+        // Validators
+        dependency("javax.validation:validation-api:${validationApiVersion}")
+
+        // Documentation
+        dependency("org.springdoc:springdoc-openapi-ui:${springdocOpenapiUiVersion}")
+
+        dependency("org.keycloak:keycloak-spring-boot-starter:${springBootKeycloakVersion}")
+        dependency "org.keycloak:keycloak-admin-client:${keycloackAdminClientVersion}"
+        dependency("io.jsonwebtoken:jjwt:${jsonwebtokenVersion}")
+
+        dependency("org.hibernate:hibernate-core:${hibernateVersion}")
+        dependency("org.hibernate:hibernate-entitymanager:${hibernateVersion}")
+
+        dependencySet(group: 'com.fasterxml.jackson.core', version: "${jacksonVersion}") {
+            entry 'jackson-databind'
+            entry 'jackson-core'
+            entry 'jackson-annotations'
+        }
+
+        dependency("org.springframework.security:spring-security-core:${securityCore}")
+        dependency("org.apache.commons:commons-lang3:${apacheCommonsLangVersion}")
+
+        dependencySet(group: 'org.junit.jupiter', version: "${junitJupiter}"){
+            entry 'junit-jupiter-api'
+            entry 'junit-jupiter-engine'
+        }
+        dependencySet(group: 'org.mockito', version: "${mockito}"){
+            entry 'mockito-core'
+            entry 'mockito-junit-jupiter'
+        }
+    }
+}
