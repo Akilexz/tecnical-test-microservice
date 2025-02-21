@@ -35,7 +35,7 @@ class ClientControllerTest {
 
     @Test
     void findById() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/clientes/2")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/clientes/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header(HttpHeaders.AUTHORIZATION, "Bearer " + authenticationTest.obtainAccessToken()))
                 .andExpect(status().isOk())

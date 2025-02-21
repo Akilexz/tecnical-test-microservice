@@ -1,9 +1,7 @@
-rootProject.name = 'technical-test-root'
+rootProject.name = 'microservice-person-client'
 include 'tt-vo'
 include 'tt-person-client'
 include 'tt-person-core'
-include 'tt-bank-client'
-include 'tt-bank-core'
 include 'tt-services'
 include 'tt-entity'
 
